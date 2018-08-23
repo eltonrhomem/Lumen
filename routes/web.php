@@ -26,9 +26,11 @@ $router->group(['prefix'=>'api'], function() use ($router){
     $router->get('/users','Api\UsersController@index');
     $router->get('/users/{id}','Api\UsersController@view');
     $router->post('/users','Api\UsersController@store');
+    $router->put('/users/{id}','Api\UsersController@update');
+    $router->delete('/users/{id}','Api\UsersController@destroy');
 
 
  });
 
- 
+
 ?>
