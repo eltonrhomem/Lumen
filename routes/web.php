@@ -20,11 +20,15 @@ $router->get('/', function () use ($router) {
 // });
 
 $router->get('/hello/{name}', 'HelloController@index');
-$router->get('/api/users', 'Api\UsersController@index');
+// $router->get('/api/users', 'Api\UsersController@index');
 
-// $router->group(['prefix'=>'api'], function() use ($router){
-//     $router->get('/users','Api\UsersController@index');
+$router->group(['prefix'=>'api'], function() use ($router){
+    $router->get('/users','Api\UsersController@index');
+    $router->get('/users/{id}','Api\UsersController@view');
+    $router->post('/users','Api\UsersController@store');
 
 
-//  });
+ });
+
+ 
 ?>
